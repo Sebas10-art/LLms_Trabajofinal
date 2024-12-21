@@ -2,7 +2,7 @@ import streamlit as st
 from langchain.chat_models import ChatOpenAI
 from PIL import Image
 
-st.set_page_config(page_title = "Chatbot usando Langchain, OpenAI y Streamlit", page_icon = "https://python.langchain.com/img/favicon.ico")
+st.set_page_config(page_title = "Chatbot - Consulta sobre Cuzco y sus atractivos", page_icon = "https://es.wikipedia.org/wiki/Escudo_del_Cuzco#/media/Archivo:Escudo_de_Cusco.png")
 
 with st.sidebar:
 
@@ -17,12 +17,12 @@ with st.sidebar:
         key = "model"
     )
 
-    image = Image.open('logos.png')
-    st.image(image, caption = 'OpenAI, Langchain y Streamlit')
+    image = Image.open('Machu_Picchu.jpg')
+    st.image(image, caption = 'Machu_Picchu')
 
     st.markdown(
         """
-        Integrando OpenAI con Streamlit y Langchain.
+        Usa tu código OpenAI e investiga más de Cuzco!
     """
     )
 
@@ -33,16 +33,12 @@ openai_api_key = st.sidebar.text_input("Ingrese tu API Key de OpenAI y dale Ente
 st.sidebar.button('Limpiar historial de chat', on_click = clear_chat_history)
 
 msg_chatbot = """
-        Soy un chatbot que está integrado a la API de OpenAI: 
+        Soy un chatbot que está integrado a la API de OpenAI y que busca que conozcas las principales características de Cuzco:
 
-        ### Preguntas frecuentes
-        
-        - ¿Quién eres?
-        - ¿Cómo funcionas?
-        - ¿Cuál es tu capacidad o límite de conocimientos?
-        - ¿Puedes ayudarme con mi tarea/trabajo/estudio?
-        - ¿Tienes emociones o conciencia?
-        - Lo que desees
+        -Tours.
+        -Comidas más pedidas.
+        -Hoteles.
+        -Mayores atractivos.
 """
 
 ## Se envía el prompt de usuario al modelo de GPT-3.5-Turbo para que devuelva una respuesta
