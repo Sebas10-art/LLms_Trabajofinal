@@ -32,14 +32,13 @@ def clear_chat_history():
 openai_api_key = st.sidebar.text_input("Ingrese tu API Key de OpenAI y dale Enter para habilitar el chatbot", key = "chatbot_api_key", type = "password")
 st.sidebar.button('Limpiar historial de chat', on_click = clear_chat_history)
 
-msg_chatbot = """
-        Soy un chatbot que está integrado a la API de OpenAI y que busca que conozcas las principales características de Cuzco:
-
-        -Tours.
-        -Comidas más pedidas.
-        -Hoteles.
-        -Mayores atractivos.
-"""
+msg_chatbot = (
+    "        Soy un chatbot que está integrado a la API de OpenAI y que busca que conozcas las principales características de Cuzco:\n\n"
+    "        - Tours.\n"
+    "        - Comidas más pedidas.\n"
+    "        - Hoteles.\n"
+    "        - Mayores atractivos.\n"
+)
 
 ## Se envía el prompt de usuario al modelo de GPT-3.5-Turbo para que devuelva una respuesta
 def get_response_openai(prompt, model):
